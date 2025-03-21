@@ -38,7 +38,7 @@ Aplikasi website **HUBIN SMKN 1 Cimahi** berbasis Laravel dan template Admin LTE
 
 1. **Clone repository ini**
    ```sh
-   git clone https://github.com/Code4Zaaa/hubin-app.git
+   git clone https://github.com/agustheletter/SchoolApp-Hubin.git
    cd hubin-app
    ```
 
