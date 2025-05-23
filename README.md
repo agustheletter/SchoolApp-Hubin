@@ -5,7 +5,7 @@ Aplikasi website **HUBIN SMKN 1 Cimahi** berbasis Laravel dan template Admin LTE
 ## 🚀 Fitur Utama
 
 1. **Manajemen Pengguna**  
-   - Autentikasi dan otorisasi pengguna berdasarkan peran (Admin, Guru HUBIN, Perusahaan, Siswa/Alumni).
+   - Autentikasi dan otorisasi pengguna berdasarkan peran (Admin / Guru HUBIN dan Siswa/Alumni/User).
    
 2. **Manajemen Perusahaan (Industri)**  
    - Menyimpan data mitra industri yang bekerja sama dengan sekolah.
