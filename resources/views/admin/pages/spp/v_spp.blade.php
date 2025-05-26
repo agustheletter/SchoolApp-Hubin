@@ -12,7 +12,7 @@
                 </td>
 
                 <td width="45%">
-                    <form action="/spp/cari" method="GET">
+                    <form action="/admin/spp/cari" method="GET">
                         <select type="text" class="form-control col-sm-9 float-right" name="sppcari" id="sppcari">
                             <option></option>
                             @foreach($siswa as $s)

@@ -13,7 +13,7 @@
                     </button>
                 </td>
                 <td width="50%">
-                    <form action="/spp/cari" method="GET">
+                    <form action="/admin/spp/cari" method="GET">
                         <input type="text" name="sppcari" class="input-group-text col-sm-6 float-right"
                             placeholder="Masukan NIS ..." value="{{ old('sppcari') }}">
                         <input type="submit" value="CARI" class="btn btn-primary float-right">

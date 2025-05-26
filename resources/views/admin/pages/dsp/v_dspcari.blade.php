@@ -13,7 +13,7 @@
 
 
                 <td width="45%">
-                    <form action="/dsp/cari" method="GET">
+                    <form action="/admin/dsp/cari" method="GET">
                         <select type="text" class="form-control col-sm-9 float-right" name="dspcari" id="dspcari">
                             <option></option>
                             @foreach($siswa as $s)
@@ -156,7 +156,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="formBayarDSPtambah" id="formBayarDSPtambah" action="/dsp/tambah" method="post">
+                        <form name="formBayarDSPtambah" id="formBayarDSPtambah" action="/admin/dsp/tambah" method="post">
                             @csrf
                             
                             <input type="hidden" class="form-control" id="idsiswa" name="idsiswa" value="{{ $hd->idsiswa }}" readonly>

@@ -75,7 +75,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formkelasdetailedit" id="formkelasdetailedit" action="/kelasdetail/edit/{{ $kd->idkelasdetail }}" method="post">
+                                        <form name="formkelasdetailedit" id="formkelasdetailedit" action="/admin/kelasdetail/edit/{{ $kd->idkelasdetail }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -163,7 +163,7 @@
                                         <h3><font color="red"><span>{{ $kd->kelas->namakelas}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/kelasdetail/hapus/{{ $kd->idkelasdetail }}" method="get">
+                                        <form action="/admin/kelasdetail/hapus/{{ $kd->idkelasdetail }}" method="get">
                                             <button type="submit" name="kelashapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -200,7 +200,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formkelastambah" id="formkelastambah" action="/kelasdetail/tambah " method="post">
+                    <form name="formkelastambah" id="formkelastambah" action="/admin/kelasdetail/tambah " method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="idkelas" class="col-sm-3 col-form-label">Kelas</label>

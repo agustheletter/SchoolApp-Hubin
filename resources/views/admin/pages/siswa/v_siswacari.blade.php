@@ -12,7 +12,7 @@
                 </td>
 
                 <td width="45%">
-                    <form action="/siswa/cari/detail" method="GET">
+                    <form action="/admin/siswa/cari/detail" method="GET">
                         <select type="text" class="form-control col-sm-9 float-right" name="siswacari" id="siswacari">
                             <option></option>
                             @foreach($siswa as $s)

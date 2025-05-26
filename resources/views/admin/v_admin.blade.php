@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="{{ asset('TemplateAdminLTE') }}/plugins/fontawesome-free/css/all.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="{{ asset('TemplateAdminLTE') }}/dist/css/adminlte.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
 
         
 
@@ -34,7 +37,11 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('TemplateAdminLTE') }}/dist/datatable/DataTables-1.11.5/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('TemplateAdminLTE') }}/dist/datatable/DataTables-1.11.5/css/dataTables.bootstrap.css">
         <!--AKHIR LIBRARY DATA TABLE-->
-
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 300px !important;
+        }
+    </style>
     </head>
 
     <body class="hold-transition sidebar-mini">

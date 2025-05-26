@@ -67,7 +67,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formprogramkeahlianedit" id="formprogramkeahlianedit" action="/programkeahlian/edit/{{ $pk->idprogramkeahlian }}" method="post">
+                                        <form name="formprogramkeahlianedit" id="formprogramkeahlianedit" action="/admin/programkeahlian/edit/{{ $pk->idprogramkeahlian }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -125,7 +125,7 @@
                                         <h3><font color="red"><span>{{ $pk->programkeahlian}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/programkeahlian/hapus/{{ $pk->idprogramkeahlian }}" method="get">
+                                        <form action="/admin/programkeahlian/hapus/{{ $pk->idprogramkeahlian }}" method="get">
                                             <button type="submit" name="programkeahlianhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formprogramkeahliantambah" id="formprogramkeahliantambah" action="/programkeahlian/tambah " method="post">
+                    <form name="formprogramkeahliantambah" id="formprogramkeahliantambah" action="/admin/programkeahlian/tambah " method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="kodeprogramkeahlian" class="col-sm-3 col-form-label">Kode Program Keahlian</label>

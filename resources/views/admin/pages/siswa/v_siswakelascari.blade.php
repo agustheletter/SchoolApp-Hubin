@@ -11,7 +11,7 @@
     <p>
 
 
-    <form action="/siswakelas/cari" method="GET">
+    <form action="/admin/siswakelas/cari" method="GET">
         <div class="form-group row">
             <div class="col-md-3">
                 <select type="text" class="form-control" id="carikelas" name="carikelas">
@@ -112,7 +112,7 @@
                                             
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/siswakelas/hapus/{{ $sk->idsiswakelas }}" method="get">
+                                        <form action="/admin/siswakelas/hapus/{{ $sk->idsiswakelas }}" method="get">
                                             <button type="submit" name="siswakelashapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal"

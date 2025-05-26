@@ -1,10 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ asset('template') }}/index3.html" class="brand-link">
-        <img src="{{ asset('template') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Aplikasi Keuangan</span>
+    <a href="{{ asset('TemplateAdminLTE4') }}/index .html" class="brand-link">
+        <span class="brand-text font-weight-light">Aplikasi Hubin</span>
     </a>
 
     <!-- Sidebar -->
@@ -17,7 +15,7 @@
             </div>
             <div class="info">
                 {{-- <a href="#" class="d-block">{{ Auth::user()->name }}</a> --}}
-                <a href="/about" class="d-block">Tentang Aplikasi</a>
+                <a href="/admin/about" class="d-block">Tentang Aplikasi</a>
             </div>
         </div>
 
@@ -41,7 +39,7 @@
 
                 <!--Awal Dashboard-->
                 <li class="nav-item">
-                    <a href="{{url('/')}}" class="nav-link">
+                    <a href="{{url('/admin')}}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -65,7 +63,7 @@
 
                         <!--Awal Tahun AJaran-->
                         <li class="nav-item">
-                            <a href="/thnajaran" class="nav-link">
+                            <a href="/admin/thnajaran" class="nav-link">
                                 {{-- <i class="nav-icon far fa-calendar-alt"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -77,7 +75,7 @@
 
                         <!--Awal Ruangan-->
                         <li class="nav-item">
-                            <a href="/ruangan" class="nav-link">
+                            <a href="/admin/ruangan" class="nav-link">
                                 {{-- <i class="nav-icon far fa-calendar-alt"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -90,7 +88,7 @@
 
                         <!--Awal Program Keahlian-->
                         <li class="nav-item">
-                            <a href="/programkeahlian" class="nav-link">
+                            <a href="/admin/programkeahlian" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-table"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -103,7 +101,7 @@
 
                         <!--Awal Jurusan-->
                         <li class="nav-item">
-                            <a href="/jurusan" class="nav-link">
+                            <a href="/admin/jurusan" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-table"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -116,7 +114,7 @@
 
                         <!--Awal Kelas-->
                         <li class="nav-item">
-                            <a href="/kelas" class="nav-link">
+                            <a href="/admin/kelas" class="nav-link">
                                 {{-- <i class="fas fa-restroom"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -128,7 +126,7 @@
 
                         <!--Awal Kelas Detail-->
                         <li class="nav-item">
-                            <a href="/kelasdetail" class="nav-link">
+                            <a href="/admin/kelasdetail" class="nav-link">
                                 {{-- <i class="fas fa-restroom"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -147,17 +145,17 @@
                 <!--Awal Siswa-->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                        <i class="nav-icon fa fa-graduation-cap" aria-hidden="true"></i>
                         <p>
                             Siswa
                             <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">2</span>
+                            <span class="badge badge-info right">4</span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <!--Awal Master Siswa-->
                         <li class="nav-item">
-                            <a href="{{url('siswa')}}" class="nav-link">
+                            <a href="{{url('admin/siswa')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Master Siswa</p>
                             </a>
@@ -166,7 +164,7 @@
 
                         <!--Awal Cari Siswa-->
                         <li class="nav-item">
-                            <a href="/siswadetail" class="nav-link">
+                            <a href="/admin/siswadetail" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cari Siswa</p>
                             </a>
@@ -175,7 +173,7 @@
 
                         <!--Awal Kelas Siswa-->
                         <li class="nav-item">
-                            <a href="/siswakelas" class="nav-link">
+                            <a href="/admin/siswakelas" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Kelas Siswa</p>
                             </a>
@@ -184,7 +182,7 @@
 
                         <!--Awal Kelas Siswa-->
                         <li class="nav-item">
-                            <a href="/mutasikelas" class="nav-link">
+                            <a href="/admin/mutasikelas" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mutasi/Naik/Pindah Kelas</p>
                             </a>
@@ -200,7 +198,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         {{-- <i class="fa fa-graduation-cap" aria-hidden="true"></i> --}}
-                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <i class="nav-icon fa fa-users" aria-hidden="true"></i>
                         <p>
                             Guru
                             <i class="fas fa-angle-left right"></i>
@@ -210,7 +208,7 @@
                     <ul class="nav nav-treeview">
                         <!--Awal Master Guru-->
                         <li class="nav-item">
-                            <a href="{{url('guru')}}" class="nav-link">
+                            <a href="{{url('admin/guru')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Master Guru</p>
                             </a>
@@ -219,7 +217,7 @@
 
                         <!--Awal Mengajar Guru-->
                         <li class="nav-item">
-                            <a href="/gurumengajar" class="nav-link">
+                            <a href="/admin/gurumengajar" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mengajar Guru</p>
                             </a>
@@ -229,42 +227,40 @@
                 </li>
                 <!--Akhir Guru-->
 
-
-
                 <!--Awal Pembayaran-->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-dollar-sign"></i>
+                        <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>
                             Pembayaran
                             <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">4</span>
+                            <span class="badge badge-info right">5</span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url('spp')}}" class="nav-link">
+                            <a href="{{url('admin/spp')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>SPP</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/dsp" class="nav-link">
+                            <a href="/admin/dsp" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>DSP</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/daftarulang" class="nav-link">
+                            <a href="/admin/daftarulang" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Daftar Ulang</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/laporan" class="nav-link">
+                            <a href="/admin/laporan" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-chart-pie"></i> --}}
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Laporan Pembayaran</p>
@@ -272,7 +268,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/jenisbayardetail" class="nav-link">
+                            <a href="/admin/jenisbayardetail" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Jenis Pembayaran</p>
                             </a>
@@ -282,7 +278,57 @@
                     </ul>
                 </li>
                 <!--Akhir Pembayaran-->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        <p>
+                            HUBIN
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">4</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- Manajemen Perusahaan -->
+                        <li class="nav-item">
+                            <a href="/admin/perusahaan" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manajemen Perusahaan</p>
+                            </a>
+                        </li>
+                        <!-- Pengumuman -->
+                        <li class="nav-item">
+                            <a href="/admin/pengumuman" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengumuman</p>
+                            </a>
+                        </li>
+                        <!-- Kunjungan / Buku Tamu -->
+                        <li class="nav-item">
+                            <a href="/admin/kunjungan" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kunjungan / Buku Tamu</p>
+                            </a>
+                        </li>
 
+
+
+                        <!-- Kewirausahaan -->
+                        <li class="nav-item">
+                            <a href="/admin/kewirausahaan" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kewirausahaan</p>
+                            </a>
+                        </li>
+                        <!-- Laporan & Statistik -->
+                        <li class="nav-item">
+                            <a href="/admin/laporanhubin" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Laporan & Statistik</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Akhir HUBIN -->
 
                 
                 

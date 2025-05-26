@@ -21,7 +21,7 @@ class LoginController extends Controller
     {
         if (Auth::check()) 
         {
-            return redirect('home');
+            return redirect('admin');
         }
         else
         {
@@ -62,7 +62,7 @@ class LoginController extends Controller
                 'idthnajaran' => $request->thnajaran
             ]);
 
-            return redirect('/home');
+            return redirect('/admin');
             // return redirect('/home',$katakunci);
         }
         else

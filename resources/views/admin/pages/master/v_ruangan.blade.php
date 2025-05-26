@@ -86,7 +86,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formruanganedit" id="formruanganedit" action="/ruangan/edit/{{ $d->idruangan }}" method="post">
+                                        <form name="formruanganedit" id="formruanganedit" action="/admin/ruangan/edit/{{ $d->idruangan }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -172,7 +172,7 @@
                                         <h3><font color="red"><span>{{ $d->ruangan}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/ruangan/hapus/{{ $d->idruangan }}" method="get">
+                                        <form action="/admin/ruangan/hapus/{{ $d->idruangan }}" method="get">
                                             <button type="submit" name="ruanganhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -211,7 +211,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formruangantambah" id="formruangantambah" action="/ruangan/tambah " method="post">
+                    <form name="formruangantambah" id="formruangantambah" action="/admin/ruangan/tambah " method="post">
                         @csrf
 
                         <div class="form-group row">

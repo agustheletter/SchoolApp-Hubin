@@ -7,7 +7,7 @@
 @section('konten')
 
     <p>
-    <form action="/siswadetail/cari" method="GET">
+    <form action="/admin/siswadetail/cari" method="GET">
         <div class="form-group row">
             <div class="col-md-3">
                 <select type="text" class="form-control" id="carisiswa" name="carisiswa">

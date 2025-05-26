@@ -19,7 +19,7 @@
     </form> --}}
 
 
-    <form action="/siswamutasikelas/cari" method="GET">
+    <form action="/admin/siswamutasikelas/cari" method="GET">
         <div class="form-group row">
             <div class="col-md-3">
                 <select type="text" class="form-control" id="carikelas" name="carikelas">

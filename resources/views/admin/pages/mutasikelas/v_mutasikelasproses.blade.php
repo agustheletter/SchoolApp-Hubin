@@ -11,7 +11,7 @@
         {{-- AWAL MEMBUAT TABEL ASAL KELAS --}}
                 
         <div class="col-md-6">
-            <form action="/mutasikelas/cari" method="GET">
+            <form action="/admin/mutasikelas/cari" method="GET">
                 <div class="form-group row">
                     <label>
                         Kelas Tahun Ajaran 

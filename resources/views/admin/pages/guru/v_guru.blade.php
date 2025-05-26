@@ -119,7 +119,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formguruedit" id="formguruedit" action="/guru/edit/{{ $g->idguru }}" method="post" enctype="multipart/form-data">
+                                        <form name="formguruedit" id="formguruedit" action="/admin/guru/edit/{{ $g->idguru }}" method="post" enctype="multipart/form-data">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -613,7 +613,7 @@
                                         </h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/guru/hapus/{{ $g->idguru }}" method="get">
+                                        <form action="/admin/guru/hapus/{{ $g->idguru }}" method="get">
                                             <button type="submit" name="guruhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal"
@@ -677,7 +677,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formgurutambah" id="formgurutambah" action="/guru/tambah " method="post" enctype="multipart/form-data">
+                    <form name="formgurutambah" id="formgurutambah" action="/admin/guru/tambah " method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="nip" class="col-sm-3 col-form-label">NIP</label>

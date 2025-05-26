@@ -13,7 +13,7 @@
 
     <p>
 
-    <form name="formgurutambah" id="formgurutambah" action="/guru/tambahaksi " method="post" enctype="multipart/form-data">
+    <form name="formgurutambah" id="formgurutambah" action="/admin/guru/tambahaksi " method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">
@@ -496,7 +496,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formgurutambah" id="formgurutambah" action="/guru/tambah " method="post">
+                    <form name="formgurutambah" id="formgurutambah" action="/admin/guru/tambah " method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="idguru" class="col-sm-3 col-form-label">ID guru</label>

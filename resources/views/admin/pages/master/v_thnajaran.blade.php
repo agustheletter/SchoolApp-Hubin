@@ -64,7 +64,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formthnajaranedit" id="formthnajaranedit" action="/thnajaran/edit/{{ $t->idthnajaran }}" method="post">
+                                        <form name="formthnajaranedit" id="formthnajaranedit" action="/admin/thnajaran/edit/{{ $t->idthnajaran }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -127,7 +127,7 @@
                                         <h3><font color="red"><span>{{ $t->thnajaran}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/thnajaran/hapus/{{ $t->idthnajaran }}" method="get">
+                                        <form action="/admin/thnajaran/hapus/{{ $t->idthnajaran }}" method="get">
                                             <button type="submit" name="thnajaranhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -176,7 +176,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formthnajarantambah" id="formthnajarantambah" action="/thnajaran/tambah " method="post">
+                    <form name="formthnajarantambah" id="formthnajarantambah" action="/admin/thnajaran/tambah " method="post">
                         @csrf
                         {{-- <div class="form-group row">
                             <label for="idthnajaran" class="col-sm-3 col-form-label">ID Tahun Ajaran</label>

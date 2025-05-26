@@ -113,7 +113,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formsiswaedit" id="formsiswaedit" action="/siswa/edit/{{ $s->idsiswa }}" method="post" enctype="multipart/form-data">
+                                        <form name="formsiswaedit" id="formsiswaedit" action="admin/siswa/edit/{{ $s->idsiswa }}" method="post" enctype="multipart/form-data">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -277,7 +277,7 @@
                                         </h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/siswa/hapus/{{ $s->idsiswa }}" method="get">
+                                        <form action="/admin/siswa/hapus/{{ $s->idsiswa }}" method="get">
                                             <button type="submit" name="siswahapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal"
@@ -340,7 +340,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formsiswatambah" id="formsiswatambah" action="/siswa/tambah" method="post" enctype="multipart/form-data">
+                    <form name="formsiswatambah" id="formsiswatambah" action="/admin/siswa/tambah" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="nis" class="col-sm-3 col-form-label">NIS</label>

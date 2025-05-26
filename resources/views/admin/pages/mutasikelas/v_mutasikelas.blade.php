@@ -7,7 +7,7 @@
 @section('konten')
 
     <p>
-    <form action="/mutasikelas/cari" method="GET">
+    <form action="/admin/mutasikelas/cari" method="GET">
         <div class="form-group row">
             <label>
                 Kelas Tahun Ajaran 

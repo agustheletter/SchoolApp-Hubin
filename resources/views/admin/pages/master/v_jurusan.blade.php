@@ -72,7 +72,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formjurusanedit" id="formjurusanedit" action="/jurusan/edit/{{ $j->idjurusan }}" method="post">
+                                        <form name="formjurusanedit" id="formjurusanedit" action="/admin/jurusan/edit/{{ $j->idjurusan }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -147,7 +147,7 @@
                                         <h3><font color="red"><span>{{ $j->jurusan}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/jurusan/hapus/{{ $j->idjurusan }}" method="get">
+                                        <form action="/admin/jurusan/hapus/{{ $j->idjurusan }}" method="get">
                                             <button type="submit" name="jurusanhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -186,7 +186,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form name="formjurusantambah" id="formjurusantambah" action="/jurusan/tambah " method="post">
+                    <form name="formjurusantambah" id="formjurusantambah" action="/admin/jurusan/tambah " method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="kodejurusan" class="col-sm-3 col-form-label">Kode Jurusan</label>

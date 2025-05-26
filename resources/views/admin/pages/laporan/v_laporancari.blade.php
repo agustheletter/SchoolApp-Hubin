@@ -5,7 +5,7 @@
     
     <!--awal isi konten dinamis-->
     @section('konten')
-        <form action="/laporan/cari" method="GET">
+        <form action="/admin/laporan/cari" method="GET">
             <table width=100%>
                 <tr>
                     <td width=25%>

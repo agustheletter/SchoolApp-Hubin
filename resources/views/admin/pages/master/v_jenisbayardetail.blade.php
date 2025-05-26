@@ -74,7 +74,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="formDetailJenisBayarEdit" id="formDetailJenisBayarEdit" action="/jenisbayardetail/edit/{{ $djb->idjenisbayardetail }}" method="post">
+                                        <form name="formDetailJenisBayarEdit" id="formDetailJenisBayarEdit" action="/admin/jenisbayardetail/edit/{{ $djb->idjenisbayardetail }}" method="post">
                                             <!--z@csrf-->
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
@@ -170,7 +170,7 @@
                                         <h3><font color="red"><span>{{ $djb->jenisbayar}} </span></font></h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/jenisbayardetail/hapus/{{ $djb->idjenisbayardetail }}" method="get">
+                                        <form action="/admin/jenisbayardetail/hapus/{{ $djb->idjenisbayardetail }}" method="get">
                                             <button type="submit" name="DetailJenisBayarhapus" class="btn btn-danger">Hapus</a></button>
                                         </form>
                                         <button type="button" name="tutup" class="btn btn-secondary" data-dismiss="modal" class="float-right">Tutup</button>
@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form name="formDetailJenisBayarTambah" id="formDetailJenisBayarTambah" action="/jenisbayardetail/tambah " method="post">
+                    <form name="formDetailJenisBayarTambah" id="formDetailJenisBayarTambah" action="/admin/jenisbayardetail/tambah " method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="idjenisbayar" class="col-sm-4 col-form-label">Jenis Bayar</label>

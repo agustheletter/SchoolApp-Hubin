@@ -10,7 +10,7 @@
     <div class="row">
         {{-- AWAL MEMBUAT TABEL ASAL KELAS --}}
         <div class="col-md-6">
-            <form action="/mutasikelas/proses" method="post">
+            <form action="/admin/mutasikelas/proses" method="post">
                 @csrf
                 <div class="form-group row">
                     <label>
