@@ -5,9 +5,6 @@
 
 <!--awal isi konten dinamis-->
 @section('konten')
-
-
-
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -16,14 +13,14 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>{{$bayar}}</h3>
+                        <h3>{{$perusahaan}}</h3>
 
-                        <p>Jumlah Transaksi</p>
+                        <p>Jumlah Perusahaan</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="admin/perusahaan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -32,14 +29,14 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>{{$pengumuman}}</h3>
 
-                        <p>Prosentase Pendapatan</p>
+                        <p>Jumlah Pengumuman</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="admin/pengumuman" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -84,24 +81,20 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>{{$siswa}}</h3>
+                        <h3>{{$umkm}}</h3>
 
-                        <p>Jumlah Siswa</p>
+                        <p>Jumlah UMKM</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="/siswakelas" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="admin/umkm" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         
         </div>
 
     </div><!-- /.container-fluid -->
-
-
-
-
 @endsection
 <!--akhir isi konten dinamis-->
 

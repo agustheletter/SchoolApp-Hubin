@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Aplikasi Keuangan | SMK Negeri 1 Cimahi | @yield('title')</title>
+        <title>Aplikasi HUBIN | SMK Negeri 1 Cimahi</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet"

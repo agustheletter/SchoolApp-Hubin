@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tbl_usaha_siswa', function (Blueprint $table) {
             $table->id();
             $table->string('nama_usaha');
+            $table->string('pemilik_usaha')->nullable();
             $table->text('deskripsi_usaha');
             $table->string('kontak_usaha');
             $table->string('alamat_usaha');

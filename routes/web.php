@@ -19,6 +19,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SiswaKelasController;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\TahunAjaranController;
+use App\Http\Controllers\UMKMAdminController;
 use App\Http\Controllers\UMKMController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ContactController;
@@ -143,6 +144,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::put('/perusahaan/update/{id}', [PerusahaanController::class, 'update'])->name('perusahaan.update');
 
     Route::resource('pengumuman', PengumumanAdminController::class);
+
+    Route::resource('/umkm', UMKMAdminController::class);
 
     //=========================AKHIR ROUTE PERUSAHAAN & LOKER=========================
 });

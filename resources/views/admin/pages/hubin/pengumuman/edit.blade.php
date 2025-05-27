@@ -17,16 +17,30 @@
                 <label>Kategori</label>
                 <input type="text" name="kategori" class="form-control" value="{{ old('kategori', $announcement->kategori) }}" required>
             </div>
-
-            <div class="form-group">
-                <label>Gambar</label>
-                @if($announcement->gambar)
-                    <p><img src="{{ asset('storage/' . $announcement->gambar) }}" alt="" width="100"></p>
-                @endif
+            {{-- <div class="form-group">
+                <label>Gambar Pengumuman</label>
                 <div class="custom-file">
-                    <input type="file" name="gambar" class="custom-file-input" id="customFile">
+                    <input type="file" name="gambar" class="custom-file-input" id="gambar" onchange="previewImage(event)">
+                    <label class="custom-file-label" for="gambar" id="gambar-label">Choose file</label>
+
+                </div>
+                <img id="preview" src="{{ isset($pengumuman) && $pengumuman->gambar ? asset($pengumuman->gambar) : '#' }}"
+                alt="Preview Gambar"
+                style="max-width: 200px; margin-top: 10px; display: {{ isset($pengumuman) && $pengumuman->gambar ? 'block' : 'none' }}">
+            </div> --}}
+            <div class="form-group">
+                <label>Gambar Pengumuman</label>
+                <div class="custom-file">
+                    <input type="file" name="gambar" class="custom-file-input" id="gambar" onchange="previewImage(event)">
                     <label class="custom-file-label" for="customFile">Pilih file baru jika ingin mengganti</label>
                 </div>
+                @if($announcement->gambar)
+                    <img id="preview" src="{{ asset($announcement->gambar) }}" alt="Preview Gambar"
+                    style="max-width: 200px; margin-top: 10px;">
+                @else
+                    <img id="preview" src="#" alt="Preview Gambar"
+                    style="max-width: 200px; margin-top: 10px; display: none;">
+                @endif
             </div>
             <div class="form-group">
                 <label>Lampiran</label>
@@ -88,6 +102,26 @@
 </form>
 
 <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+<script>
+function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('preview');
+    const label = document.getElementById('gambar-label');
+
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+
+        //label.textContent = file.name;
+
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
+    } else {
+        //label.textContent = 'Choose file';
+        preview.src = '#';
+        preview.style.display = 'none';
+    }
+}
+</script>
 <script>
     ClassicEditor
         .create(document.querySelector('#isi_pengumuman'), {

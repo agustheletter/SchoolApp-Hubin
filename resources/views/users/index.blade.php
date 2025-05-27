@@ -415,65 +415,41 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Announcement Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="icon-container bg-blue-100 text-blue-400 mr-4">
-                                <i class="fas fa-bullhorn feature-icon"></i>
+                @foreach($pengumuman as $item)
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="icon-container bg-blue-100 text-blue-400 mr-4">
+                                @if($item->kategori == 'Lowongan Kerja')
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                    </svg>
+                                @elseif($item->kategori == 'Workshop' || $item->kategori == 'Pelatihan' || $item->kategori == 'Seminar')
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                @else
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                    </svg>
+                                @endif
+                                </div>
+                                <span class="text-sm text-gray-500">
+                                    {{ \Carbon\Carbon::parse($item->tanggal_pengumuman)->translatedFormat('d F Y') }}
+                                </span>
                             </div>
-                            <span class="text-sm text-gray-500">12 Juni 2023</span>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                {{ $item->judul_pengumuman }}
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($item->isi_pengumuman), 120) }}
+                            </p>
+                            <a href="{{ route('pengumumandetail', $item->id) }}" class="text-blue-400 hover:text-blue-500 font-medium flex items-center">
+                                Selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Perekrutan PT. Maju Jaya</h3>
-                        <p class="text-gray-600 mb-4">
-                            PT. Maju Jaya membuka lowongan kerja untuk lulusan Teknik Elektronika. Pendaftaran dibuka
-                            hingga 30 Juni 2023.
-                        </p>
-                        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium flex items-center">
-                            Selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
                     </div>
-                </div>
-
-                <!-- Announcement Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="icon-container bg-blue-100 text-blue-400 mr-4">
-                                <i class="fas fa-calendar-alt feature-icon"></i>
-                            </div>
-                            <span class="text-sm text-gray-500">5 Juni 2023</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Workshop Kewirausahaan</h3>
-                        <p class="text-gray-600 mb-4">
-                            Workshop kewirausahaan untuk siswa kelas XII akan dilaksanakan pada 20 Juni 2023 di Aula
-                            SMKN 1 Cimahi.
-                        </p>
-                        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium flex items-center">
-                            Selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Announcement Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="icon-container bg-blue-100 text-blue-400 mr-4">
-                                <i class="fas fa-users feature-icon"></i>
-                            </div>
-                            <span class="text-sm text-gray-500">28 Mei 2023</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kunjungan Industri</h3>
-                        <p class="text-gray-600 mb-4">
-                            Kunjungan industri ke PT. Teknologi Cerdas untuk siswa jurusan Teknik Komputer Jaringan pada
-                            15 Juni 2023.
-                        </p>
-                        <a href="#" class="text-blue-400 hover:text-blue-500 font-medium flex items-center">
-                            Selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="text-center mt-12">
@@ -584,87 +560,55 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- UMKM Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="h-48 bg-gray-200 relative">
-                        <img src="https://via.placeholder.com/400x300/E0E0E0/808080?text=Produk+UMKM+1"
-                            alt="UMKM Product" class="w-full h-full object-cover">
-                        <div
-                            class="absolute top-4 right-4 bg-blue-400 text-white px-3 py-1 rounded-full text-xs font-medium">
-                            <i class="fas fa-tag mr-1"></i> Makanan
+                @foreach($usaha as $item)
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative h-48">
+                        <img 
+                            src="{{ asset($item->gambar_usaha) }}" 
+                            alt="{{ $item['title'] }}" 
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute top-4 right-4 bg-blue-400 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            {{ $item->kategori_usaha ?? 'Lainnya' }}
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kue Basah Alika</h3>
-                        <p class="text-gray-600 mb-4 text-sm">
-                            Usaha kue tradisional yang dikelola oleh Alika, alumni Jurusan Tata Boga tahun 2020.
-                        </p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ $item->nama_usaha }}</h3>
+                        <p class="text-gray-600 mb-4 text-sm">{{ strip_tags($item->deskripsi_usaha) }}</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-600">{{ $item->alamat_usaha }}</span>
+                            </div>
+                        </div>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
-                                <span class="text-sm text-gray-600">Cimahi</span>
+                                <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-600">{{ $item->pemilik_usaha }}</span>
                             </div>
-                            <a href="#" class="text-blue-400 hover:text-blue-500 text-sm font-medium">
-                                Kunjungi <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
+                            @if ($item->sosmed_usaha)
+                                <a href="{{ $item->sosmed_usaha }}" class="text-blue-400 hover:text-blue-500 text-sm font-medium flex items-center">
+                                Kunjungi 
+                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            @endif
+                            
                         </div>
                     </div>
                 </div>
-
-                <!-- UMKM Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="h-48 bg-gray-200 relative">
-                        <img src="https://via.placeholder.com/400x300/E0E0E0/808080?text=Produk+UMKM+2"
-                            alt="UMKM Product" class="w-full h-full object-cover">
-                        <div
-                            class="absolute top-4 right-4 bg-blue-400 text-white px-3 py-1 rounded-full text-xs font-medium">
-                            <i class="fas fa-tag mr-1"></i> Teknologi
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cimahi Tech Solution</h3>
-                        <p class="text-gray-600 mb-4 text-sm">
-                            Jasa pembuatan website dan aplikasi mobile oleh tim siswa Jurusan RPL.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
-                                <span class="text-sm text-gray-600">Online</span>
-                            </div>
-                            <a href="#" class="text-blue-400 hover:text-blue-500 text-sm font-medium">
-                                Kunjungi <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UMKM Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <div class="h-48 bg-gray-200 relative">
-                        <img src="https://via.placeholder.com/400x300/E0E0E0/808080?text=Produk+UMKM+3"
-                            alt="UMKM Product" class="w-full h-full object-cover">
-                        <div
-                            class="absolute top-4 right-4 bg-blue-400 text-white px-3 py-1 rounded-full text-xs font-medium">
-                            <i class="fas fa-tag mr-1"></i> Kerajinan
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kayu Kreatif</h3>
-                        <p class="text-gray-600 mb-4 text-sm">
-                            Produk kerajinan kayu dengan desain modern oleh siswa Jurusan Teknik Furnitur.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
-                                <span class="text-sm text-gray-600">Bandung</span>
-                            </div>
-                            <a href="#" class="text-blue-400 hover:text-blue-500 text-sm font-medium">
-                                Kunjungi <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+
 
             <div class="text-center mt-12">
                 <a href="{{ route('umkm') }}"

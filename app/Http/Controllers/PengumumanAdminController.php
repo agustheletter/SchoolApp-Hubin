@@ -37,8 +37,22 @@ class PengumumanAdminController extends Controller
             'lampiran' => 'nullable|file|max:4096',
         ]);
 
-        $gambar = $request->file('gambar')?->store('gambar', 'public');
-        $lampiran = $request->file('lampiran')?->store('lampiran', 'public');
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $filename = time() . '_' . 'pengumuman_gambar' . "_" . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/pengumuman'), $filename);
+            $gambar = 'uploads/pengumuman/' . $filename;
+        } else {
+            $gambar = null;
+        }
+        if ($request->hasFile('lampiran')) {
+            $file = $request->file('lampiran');
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('uploads/pengumuman/lampiran'), $filename);
+            $lampiran = 'uploads/pengumuman/lampiran/' . $filename;
+        } else {
+            $lampiran = null; 
+        }
 
         PengumumanModel::create([
             ...$validated,
@@ -99,8 +113,15 @@ class PengumumanAdminController extends Controller
         }
 
         if ($request->hasFile('lampiran')) {
-            if ($pengumuman->lampiran) Storage::disk('public')->delete($pengumuman->lampiran);
-            $validated['lampiran'] = $request->file('lampiran')->store('lampiran', 'public');
+            if ($pengumuman->lampiran) {
+                Storage::disk('public')->delete($pengumuman->lampiran);
+            }
+
+            $file = $request->file('lampiran');
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('uploads/pengumuman/lampiran'), $filename);
+
+            $validated['lampiran'] = 'uploads/pengumuman/lampiran/' . $filename;
         }
 
         $pengumuman->update([

@@ -31,7 +31,7 @@
                     <td>{{ \Carbon\Carbon::parse($item->tanggal_pengumuman)->format('d M Y') }}</td>
                     <td>{{ $item->tanggal_berakhir ? \Carbon\Carbon::parse($item->tanggal_berakhir)->format('d M Y') : '-' }}</td>
                     <td>
-                        <a href="{{ route('pengumuman.show', $item->id) }}" class="btn btn-sm btn-info">
+                        <a href="{{ route('pengumumandetail', $item->id) }}" class="btn btn-sm btn-info">
                             <i class="fas fa-eye"></i>
                         </a>
                         <a href="{{ route('pengumuman.edit', $item->id) }}" class="btn btn-sm btn-warning">

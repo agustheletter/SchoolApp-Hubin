@@ -54,19 +54,17 @@
                 </x-card-header>
                 <x-card-content>
                   <div class="space-y-3">
-                    @foreach($announcement->lampiran as $file)
                       <div class="flex items-center justify-between p-4 border rounded-lg">
                         <div class="flex items-center">
                           <div>
-                            <p class="font-medium text-gray-800">{{ $file['name'] }}</p>
-                            <p class="text-sm text-gray-600">{{ $file['size'] }}</p>
+                            <p class="font-medium text-gray-800"><p class="font-medium text-gray-800">{{ basename($announcement->lampiran) }}</p>
+                            <p class="text-sm text-gray-600">                    {{ number_format(filesize(public_path($announcement->lampiran)) / 1024, 2) }} KB</p>
                           </div>
                         </div>
-                        <x-button size="sm" variant="outline" as="a" href="{{ $file['url'] }}" download>
+                        <x-button size="sm" variant="outline" as="a" href="{{ asset($announcement->lampiran) }}" download>
                           Unduh
                         </x-button>
                       </div>
-                    @endforeach
                   </div>
                 </x-card-content>
             </x-card>
